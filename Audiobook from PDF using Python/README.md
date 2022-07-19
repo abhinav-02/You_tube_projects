@@ -16,5 +16,3 @@ It is created to convert PDF file into audiobook using Python library
 - [@Abhinav Srivastava](https://github.com/abhinav-02/)
 
 
-## Picture
-![Alt text]("C:\Lenovo back up\1datahub\1datahub\1Youtube_project\Audiobook from PDF using Python\front pic.png"?raw=true "Title")
