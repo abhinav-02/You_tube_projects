@@ -8,9 +8,7 @@ import PyPDF2
 
 def audiobook_text(text,save_location,lang = 'en'):
     '''
-     Convert input text into speech.
-
-    This function simply converts text input into speech
+    Converts input text into speech, then create and save mp3 file
 
     Parameters
     ----------
@@ -23,7 +21,8 @@ def audiobook_text(text,save_location,lang = 'en'):
         The language of the text
     Returns
     -------
-    mp3 file
+    It doesn't resturn anything but save mp3 file in the 'save_location' parameter 
+    
         The audio mp3 file will contains the speech of the input text
     '''
     gtts_transformer = gTTS(text=text, lang=lang)
@@ -44,9 +43,7 @@ audiobook_text(text, save_location)
 
 def audiobook_pdf(pdf_location,save_location,lang = 'en'):
     '''
-     Convert input text into speech.
-
-    This function simply converts pdf input into speech
+    Converts input pdf into speech, then create and save mp3 file
 
     Parameters
     ----------
@@ -59,8 +56,9 @@ def audiobook_pdf(pdf_location,save_location,lang = 'en'):
         The language of the text
     Returns
     -------
-    mp3 file
-        The audio mp3 file will contains the speech of the input text
+    It doesn't resturn anything but save mp3 file in the 'save_location' parameter 
+    
+        The audio mp3 file will contains the speech of the input pdf
     '''
     pdf = open(pdf_location,'rb')
     reader = PyPDF2.PdfFileReader(pdf)

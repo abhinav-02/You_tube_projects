@@ -6,6 +6,16 @@ import PyPDF2
 
 
 def audiobook_instant(pdf_loc):
+    '''
+    Converts input text into speech, then play the speech created 
+
+    Parameters
+    ----------
+    pdf_location : string
+        location of pdf (ends with .pdf)
+    Returns
+        It doesn't return anything but play the output as speech from the input text
+    '''
     
     pdf = open(pdf_loc,'rb')
     reader = PyPDF2.PdfFileReader(pdf)
