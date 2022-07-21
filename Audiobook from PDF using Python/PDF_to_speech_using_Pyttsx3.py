@@ -4,16 +4,22 @@ import pyttsx3
 # PDF files
 import PyPDF2  
 
-book = open('Frost.pdf','rb')
-pdf_reader = PyPDF2.PdfFileReader(book)
-num_pages = pdf_reader.numPages
 
-play = pyttsx3.init()
-print('Playing Audio Book')
+def audiobook_instant(pdf_loc):
+    
+    pdf = open(pdf_loc,'rb')
+    reader = PyPDF2.PdfFileReader(pdf)
+    num_pages = reader.numPages
+    
+    play = pyttsx3.init()
+    print('Audio Book is playing now... Enjoy..')
+    
+    for num in range(0, num_pages):
+        read_pages = reader.getPage(num)
+        text = read_pages.extractText()
+        
+        play.say(text)
+        play.runAndWait()
+        
 
-for num in range(0, num_pages):
-	page = pdf_reader.getPage(num)
-	data = page.extractText()
-
-	play.say(data)
-	play.runAndWait()
+audiobook_instant('Frost.pdf')
